@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tim van Veen | TVV Music</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#050507; color:#e5e5e5; font-family:-apple-system,BlinkMacSystemFont,sans-serif; overflow-x:hidden; }
+::selection { background:#00f0ff; color:#000; }
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(5,5,7,0.75), rgba(5,5,7,0.95)),
+                url("golf-night.jpg") center/cover no-repeat;
+    display:flex; flex-direction:column; justify-content:center; padding-left:10%; overflow:hidden;
+}
+
+/* moving light sweep */
+.hero::after {
+    content:""; position:absolute; top:0; left:-50%; width:50%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(0,240,255,0.08), transparent);
+    transform: skewX(-20deg); animation:sweep 8s infinite linear;
+}
+@keyframes sweep { 0%{left:-50%} 100%{left:150%} }
+
+.hero h1 { font-size:4rem; font-weight:600; letter-spacing:4px; }
+.glow {
+    color:#00f0ff;
+    animation: glowPulse 3s ease-in-out infinite alternate,
+               flicker 6s infinite;
+}
+@keyframes glowPulse {
+    from { text-shadow:0 0 5px #00f0ff,0 0 15px #00f0ff,0 0 30px rgba(0,240,255,0.5); }
+    to { text-shadow:0 0 10px #00f0ff,0 0 25px #00f0ff,0 0 45px rgba(0,240,255,0.8); }
+}
+@keyframes flicker {
+    0%,18%,22%,25%,53%,57%,100%{opacity:1;}
+    20%,24%,55%{opacity:0.92;}
+}
+.hero p { margin-top:20px; font-size:1.1rem; max-width:500px; opacity:0.75; }
+.btn { margin-top:40px; display:inline-block; padding:14px 40px; border:1px solid #00f0ff; color:#00f0ff; text-decoration:none; letter-spacing:2px; transition:0.3s ease; }
+.btn:hover { background:#00f0ff; color:#000; box-shadow:0 0 25px #00f0ff; }
+
+/* ===== SECTION ===== */
+section { padding:120px 10%; }
+.section-title { font-size:1.8rem; margin-bottom:40px; letter-spacing:3px; color:#00f0ff; text-shadow:0 0 10px rgba(0,240,255,0.6); }
+
+/* ===== VIDEO ===== */
+.video-wrapper { position:relative; padding-bottom:56.25%; height:0; }
+.video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+/* ===== SERVICES ===== */
+.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; }
+.card { background: rgba(15,15,20,0.6); padding:40px; border:1px solid rgba(0,240,255,0.15); transition:0.3s ease; }
+.card:hover { border:1px solid #00f0ff; box-shadow:0 0 20px rgba(0,240,255,0.3); }
+.card h3 { margin-bottom:15px; letter-spacing:2px; }
+.card p { opacity:0.7; line-height:1.6; }
+
+/* ===== CONTACT ===== */
+.contact { text-align:center; }
+.contact a { color:#00f0ff; text-decoration:none; letter-spacing:2px; }
+
+footer { text-align:center; padding:40px; font-size:0.8rem; opacity:0.4; }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Tim <span class="glow">van Veen</span></h1>
+    <p>Atmospheric sound for film, digital & motion</p>
+    <a href="#contact" class="btn">START A PROJECT</a>
+</div>
+
+<!-- PORTFOLIO -->
+<section>
+    <div class="section-title">PORTFOLIO</div>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+    <div class="section-title">SERVICES</div>
+    <div class="services">
+        <div class="card">
+            <h3>CUSTOM COMPOSITION</h3>
+            <p>Original atmospheric soundtrack tailored to your project. Full production, mix & master included.</p>
+            <p><strong>Starting at €750</strong></p>
+        </div>
+        <div class="card">
+            <h3>CREATOR RETAINER</h3>
+            <p>Monthly atmospheric tracks for consistent brand identity and motion content.</p>
+            <p><strong>€600 / month</strong></p>
+        </div>
+        <div class="card">
+            <h3>LICENSED TRACKS</h3>
+            <p>Curated night drive & cinematic instrumentals ready for use in film, games or digital content.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <div class="section-title">CONTACT</div>
+    <p>Email: <a href="mailto:hello@tvvmusic.com">hello@tvvmusic.com</a></p>
+    <p>Instagram: <a href="#">@tvvmusic</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 TVV Music — Tim van Veen
+</footer>
+
+</body>
+</html>
